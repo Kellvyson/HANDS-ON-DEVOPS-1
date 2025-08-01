@@ -1,21 +1,16 @@
 name: CI Pipeline  
-
 on: [push, pull_request]  
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout do Código
-        uses: actions/checkout@v3
-      
-      - name: Configurar Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.8'
-      
-      - name: Instalar Dependências
-        run: pip install pytest
-      
-      - name: Executar Testes
+jobs:  
+  test:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Checkout do Código  
+        uses: actions/checkout@v3  
+      - name: Configurar Python  
+        uses: actions/setup-python@v3  
+        with:  
+          python-version: '3.8'  
+      - name: Instalar Dependências  
+        run: pip install pytest  
+      - name: Executar Testes  
         run: pytest tests/
